@@ -2,7 +2,7 @@
 Name=Reduce Size
 Comment=Compress the video file's size without quality loss.
 Icon-Name=video
-Exec=sizereducer %F
+Exec=videosizereducer %F
 Selection=s
 Mimetypes=video/*;
 Quote=double
