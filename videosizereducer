@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+from sys import argv
+from os import system, popen, path
+from datetime import datetime
+if argv[1] in ["-h","--help"]:
+    print("""This command requires ffmpeg package. If it not installed on your system install it first.
+Usage:
+    videosizereducer /path/to/file
+""")
+else:
+    if path.exists(argv[1]):
+        home=popen("echo $HOME").read().strip()
+        parts=argv[1].split(".")
+        file="".join(parts[:-1])+"-compressed"
+        file=file+"."+parts[-1]
+        time=datetime.now().strftime("%d-%b-%Y %H:%M:%S")
+        system("mkdir -p "+home+"/.cache/VideoSizeReducer/")
+        system(f"ffmpeg -i {argv[1]} -vcodec libx264 -crf 24 {file}")
+        ratio=100-int(path.getsize(file)/path.getsize(argv[1])*100)
+        print(f"[{time}]\nInput    : {argv[1]} ({int(path.getsize(argv[1])/1024)} KB)\nOutput   : {file} ({int(path.getsize(file)/1024)} KB)\nReduction: {ratio}%",file=open(home+"/.cache/VideoSizeReducer/log.txt","a"))
+    else:
+        print("File does not exists.")

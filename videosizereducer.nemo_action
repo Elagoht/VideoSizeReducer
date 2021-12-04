@@ -1,0 +1,10 @@
+[Nemo Action]
+Name=Reduce Size
+Comment=Compress the video file's size without quality loss.
+Icon-Name=video
+Exec=sizereducer %F
+Selection=s
+Mimetypes=video/*;
+Quote=double
+Dependencies=ffmpeg;
+Terminal=true
