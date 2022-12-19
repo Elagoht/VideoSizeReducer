@@ -1,5 +1,8 @@
 # Video Size Reducer
 
+![Nemo Action](https://shields.io/badge/Nemo-Action-87CF3E?logo=linuxmint&logoColor=white&style=for-the-badge)
+![Video Gap Remove](https://shields.io/badge/Remove_Video_Gap-000000?logo=airplayvideo&logoColor=white&style=for-the-badge)
+
 This python script compress the input video by changing video codec. After install, on nemo file manager and nemo desktop, you can simply use it right click to a video and select *Reduce Size*.
 
 Alternatively you can use it via terminal. just give file path as parameter.
